@@ -20,4 +20,5 @@ from django.urls import path
 urlpatterns = [
     path(route='', view=views.index, name="index"),
     path(route='addtodo/', view=views.add_todo, name="add_todo"),
+    path(route='completed/<int:task_id>/', view=views.update_todo, name="complete_todo"),
 ]
