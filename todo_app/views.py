@@ -16,3 +16,10 @@ def add_todo(request):
     todo_item = Todo(task=task)
     todo_item.save()
     return redirect('index')
+
+
+def update_todo(request, task_id):
+    task = Todo.objects.get(id=task_id)
+    task.done = True
+    task.save()
+    return redirect('index')
