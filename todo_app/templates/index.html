@@ -16,7 +16,7 @@
 <ul>
     {% for task in tasks %}
         {% if not task.done %}
-            <li>{{ task.task }} is not completed./li>
+            <li><a href="{% url 'complete_todo' task.id %}">{{ task.task }} is not completed.</a></li>
         {% else %}
             <h3>{{ task.task }} is completed.</h3>
         {% endif %}
