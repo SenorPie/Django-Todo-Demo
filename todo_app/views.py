@@ -23,3 +23,8 @@ def update_todo(request, task_id):
     task.done = True
     task.save()
     return redirect('index')
+
+
+def remove_all(request):
+    Todo.objects.all().delete()
+    return redirect('index')
